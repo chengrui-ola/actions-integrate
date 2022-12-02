@@ -7,7 +7,7 @@ func test() error {
 }
 
 func main() {
-	// test()
+	test()
 
 	var mp map[string]string
 	mp["hello"] = "你好"
