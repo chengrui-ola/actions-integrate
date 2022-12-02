@@ -2,13 +2,23 @@ name: golangci-lint
 
 on: [push, pull_request]
 
+# 使用github上已经弄好的golangci
+#jobs:
+#  golangci:
+#    name: lint
+#    runs-on: self-hosted
+#    steps:
+#      - uses: actions/checkout@v2
+#      - name: golangci-lint
+#        uses: golangci/golangci-lint-action@v2
+#        with:
+#          version: latest
+
+# 使用自定义的golangci-lint
 jobs:
   golangci:
     name: lint
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v2
-      - name: golangci-lint
-        uses: golangci/golangci-lint-action@v2
-        with:
-          version: latest
+      - name: custom lint rule
+        run: golangci-lint run
